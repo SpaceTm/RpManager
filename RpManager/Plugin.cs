@@ -62,8 +62,8 @@ namespace RpManager
             Player.Spawning -= ScientistSpawnBc.OnSciSpawn;
             Player.Spawning -= ChaosBroadcast.OnChaosSpawning;
             Player.Spawning -= GuardBroadcast.OnSpawningGuard;
-            Player.Escaping - ScientistEscapeCassie.OnSciEscaping;
-            Player.Escaping -ClassDEscapeCassie.OnClassDEscaping;
+            Player.Escaping -= ScientistEscapeCassie.OnSciEscaping;
+            Player.Escaping -= ClassDEscapeCassie.OnClassDEscaping;
             ClassDRandomBC = null;
             ScientistSpawnBc = null;
             MtfSpawnHint = null;
