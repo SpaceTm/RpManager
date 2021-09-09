@@ -11,8 +11,6 @@ namespace RpManager.Broadcasts
     {
         public void OnChaosSpawning(SpawningEventArgs ev)
         {
-            if (ev.Player.Team == Team.CHI)
-            {
                 if (ev.Player.Role == RoleType.ChaosConscript)
                 {
                     ev.Player.Broadcast(10, Plugin.Singleton.Config.ChaosBC);
@@ -31,8 +29,7 @@ namespace RpManager.Broadcasts
                 if (ev.Player.Role == RoleType.ChaosRifleman)
                 {
                     ev.Player.Broadcast(10, Plugin.Singleton.Config.ChaosBC);
-                }
-            }
+                {
         }
     }
 }
