@@ -1,4 +1,4 @@
-![img](https://img.shields.io/github/downloads/SpaceTm/RpManager/total?style=for-the-badge)
+![img](https://img.shields.io/github/downloads/SpaceTm/RpManager/total.svg)
 # RpManager
 A plugin that enhanches the RP experience, by adding some settable random broadcast and cassies. This also can help new player to get used to RP
 
