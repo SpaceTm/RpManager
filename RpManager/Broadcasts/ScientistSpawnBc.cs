@@ -13,7 +13,7 @@ namespace RpManager.Broadcasts
         {
             if (ev.RoleType == RoleType.Scientist)
             {
-                string[] array = Plugin.Singleton.Config.BcListSci;
+                string array = Plugin.Singleton.Config.BcListSci;
 
                 int num = (UnityEngine.Random.Range(0, array.Length));
                 ev.Player.Broadcast(10, array[num]);
