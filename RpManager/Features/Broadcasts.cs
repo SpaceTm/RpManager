@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,30 +10,6 @@ namespace RpManager.Features
     public class Broadcasts
     {
         System.Random random = Exiled.Loader.Loader.Random;
-        public void TeamSpawning(SpawningEventArgs ev)
-        {
-            switch (ev.Player.Team)
-            {
-                case Team.CHI:
-                    ev.Player.Broadcast(10, Plugin.Singleton.Config.ChaosBC);
-                    break;
-
-                case Team.RSC:
-                    string[] arraySci = Plugin.Singleton.Config.BcListSci.ToArray();
-
-                    int Sci = random.Next(0, arraySci.Length);
-                    ev.Player.Broadcast(10, arraySci[Sci]);
-                    break;
-
-                case Team.CDP:
-                    string[] arrayCd = Plugin.Singleton.Config.BcListClassD.ToArray();
-
-                    int Cd = random.Next(0, arrayCd.Length);
-                    ev.Player.Broadcast(10, arrayCd[Cd]);
-                    break;
-            }
-        }
-
         public void SingleSpawn(SpawningEventArgs ev)
         {
             switch (ev.Player.Role)
@@ -58,6 +34,35 @@ namespace RpManager.Features
                     string[] arrayFg = Plugin.Singleton.Config.BcListGuard.ToArray();
                     int Fg = random.Next(0, arrayFg.Length);
                     ev.Player.Broadcast(10, arrayFg[Fg]);
+                    break;
+
+                case RoleType.Scientist:
+                    string[] arraySci = Plugin.Singleton.Config.BcListSci.ToArray();
+                    int Sci = random.Next(0, arraySci.Length);
+                    ev.Player.Broadcast(10, arraySci[Sci]);
+                    break;
+
+                case RoleType.ClassD:
+                    string[] arrayCd = Plugin.Singleton.Config.BcListClassD.ToArray();
+
+                    int Cd = random.Next(0, arrayCd.Length);
+                    ev.Player.Broadcast(10, arrayCd[Cd]);
+                    break;
+
+                case RoleType.ChaosConscript:
+                    ev.Player.Broadcast(10, Plugin.Singleton.Config.ChaosBC);
+                    break;
+
+                case RoleType.ChaosMarauder:
+                    ev.Player.Broadcast(10, Plugin.Singleton.Config.ChaosBC);
+                    break;
+
+                case RoleType.ChaosRepressor:
+                    ev.Player.Broadcast(10, Plugin.Singleton.Config.ChaosBC);
+                    break;
+
+                case RoleType.ChaosRifleman:
+                    ev.Player.Broadcast(10, Plugin.Singleton.Config.ChaosBC);
                     break;
             }
         }
