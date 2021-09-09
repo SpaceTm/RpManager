@@ -56,6 +56,14 @@ namespace RpManager
 
         public override void OnDisabled()
         {
+
+            Player.Spawning -= ClassDRandomBC.OnSpawningClassd;
+            Player.Spawning -= MtfSpawnHint.OnNtfSpawning;
+            Player.Spawning -= ScientistSpawnBc.OnSciSpawn;
+            Player.Spawning -= ChaosBroadcast.OnChaosSpawning;
+            Player.Spawning -= GuardBroadcast.OnSpawningGuard;
+            Player.Escaping - ScientistEscapeCassie.OnSciEscaping;
+            Player.Escaping -ClassDEscapeCassie.OnClassDEscaping;
             ClassDRandomBC = null;
             ScientistSpawnBc = null;
             MtfSpawnHint = null;
@@ -64,12 +72,6 @@ namespace RpManager
             ClassDEscapeCassie = null;
             ScientistEscapeCassie = null;
             Singleton = null;
-
-            Player.Spawning -= ClassDRandomBC.OnSpawningClassd;
-            Player.Spawning -= MtfSpawnHint.OnNtfSpawning;
-            Player.Spawning -= ScientistSpawnBc.OnSciSpawn;
-            Player.Spawning -= ChaosBroadcast.OnChaosSpawning;
-            Player.Spawning -= GuardBroadcast.OnSpawningGuard;
             base.OnDisabled();
         }
 
