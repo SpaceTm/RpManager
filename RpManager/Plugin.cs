@@ -29,8 +29,6 @@ namespace RpManager
             EscapingCassie = new EscapingCassie();
             Broadcasts = new Broadcasts();
 
-
-            Player.Spawning += Broadcasts.TeamSpawning;
             Player.Spawning += Broadcasts.SingleSpawn;
             Player.Escaping += EscapingCassie.OnClassEscaping;
 
@@ -39,7 +37,6 @@ namespace RpManager
 
         public override void OnDisabled()
         {
-            Player.Spawning -= Broadcasts.TeamSpawning;
             Player.Spawning -= Broadcasts.SingleSpawn;
             Player.Escaping -= EscapingCassie.OnClassEscaping;
 
