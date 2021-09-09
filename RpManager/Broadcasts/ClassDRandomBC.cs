@@ -15,7 +15,7 @@ namespace RpManager.Broadcasts
         {
             if (ev.Player.Role == RoleType.ClassD)
             {
-                string array = Plugin.Singleton.Config.BcListClassD;
+                string[] array = Plugin.Singleton.Config.BcListClassD.ToArray();
 
                 int num = (UnityEngine.Random.Range(0, array.Length));
                 ev.Player.Broadcast(5, array[num]);
