@@ -14,7 +14,7 @@ namespace RpManager.Broadcasts
         {
             if (ev.Player.Role == RoleType.FacilityGuard)
             {
-                string array = Plugin.Singleton.Config.BcListGuard;
+                string array[] = Plugin.Singleton.Config.BcListGuard.ToArray();
 
                 int num = (UnityEngine.Random.Range(0, array.Length));
                 ev.Player.Broadcast(5, array[num]);
