@@ -14,8 +14,6 @@ namespace RpManager.Broadcasts
     {
         public void OnNtfSpawning(SpawningEventArgs ev)
         {
-            if (ev.Player.Team == Team.MTF)
-            {
                 if (ev.Player.Role == RoleType.NtfCaptain)
                 {
                     ev.Player.Broadcast(10, Plugin.Singleton.Config.NtfCommanderBc);
@@ -35,7 +33,6 @@ namespace RpManager.Broadcasts
                 {
                     ev.Player.Broadcast(5, Plugin.Singleton.Config.SpecialistNtfBc);
                 }
-            }
         }
     }
 }
