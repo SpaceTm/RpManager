@@ -39,9 +39,9 @@ namespace RpManager
 
         public override void OnDisabled()
         {
-            Player.Spawning += Broadcasts.TeamSpawning;
-            Player.Spawning += Broadcasts.SingleSpawn;
-            Player.Escaping += EscapingCassie.OnClassEscaping;
+            Player.Spawning -= Broadcasts.TeamSpawning;
+            Player.Spawning -= Broadcasts.SingleSpawn;
+            Player.Escaping -= EscapingCassie.OnClassEscaping;
 
             EscapingCassie = null;
             Broadcasts = null;
